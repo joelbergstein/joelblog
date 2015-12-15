@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="center-text">Joel's Personal Blog</h1>
+
+<!--<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Author</th>
+      <th>Content</th>
+      <th>Header img</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.title %></td>
+        <td><%= blog.created_at %></td>
+        <td><%= blog.author %></td>
+        <td><%= blog.content %></td>
+        <td><%= blog.header_img %></td>
+        <td><%= link_to 'Show', blog %></td>
+        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> -->
+<div class="row">
+  <div class="col-md-offset-1 col-md-8">
+    <%= render @blogs %>
+  </div>
+  <div class="col-md-3">
+    <ul>
+    <% @blogs.each do |blog| %>
+      <li><%= link_to "#{blog.title}", blog %></li>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Blog', new_blog_path %>

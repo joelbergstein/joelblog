@@ -1,0 +1,20 @@
+<div class="container-fluid blog-post">
+	<h2><%= link_to "#{blog.title}", blog%></h2>
+
+	<% 	output = ""
+		timeout = ""
+		if blog.created_at == blog.updated_at
+			timeout = blog.created_at.strftime("%B %d, %Y")
+			output = "Created by #{blog.author} on #{timeout}"
+		else
+			timeout = blog.updated_at.strftime("%B %d, %Y")
+			output = "Updated by #{blog.author} on #{timeout}"
+		end
+	%>
+
+	<span><%= output %></span>
+
+	<p><%= simple_format(blog.content) %></p>
+	<%= link_to 'Edit', edit_blog_path(blog), :class =>"btn-link" %>
+	<%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"btn-link" %>
+</div>
