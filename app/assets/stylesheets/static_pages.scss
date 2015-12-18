@@ -4,7 +4,18 @@
 
 body {
 	margin-top: 50px;
+    margin-bottom: 15px;
 
+}
+
+.center-text {
+    text-align: center;
+}
+
+.jumbotron {
+    text-align: center;
+    background-image: image-url("jumbotronbackground.jpg");
+    background-size: cover;
 }
 
 #bottomfooter {

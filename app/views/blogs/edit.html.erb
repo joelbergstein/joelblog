@@ -1,6 +1,12 @@
 <h1>Editing <%= @blog.title %></h1>
 
-<%= render 'form' %>
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<%= render 'form' %>
+		<br>
+		<%= link_to 'Show', @blog, :class => "btn-link" %> |
+		<%= link_to 'Back', blogs_path, :class => "btn-link" %>
+	</div>
+</div>
 
-<%= link_to 'Show', @blog %> |
-<%= link_to 'Back', blogs_path %>
+

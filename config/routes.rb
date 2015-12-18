@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :blogs
+  resources :blogs do
+    resources :comments, :only => [:create, :destroy]
+  end
   get 'static_pages/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
